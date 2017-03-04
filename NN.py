@@ -1,25 +1,19 @@
 # importing dependencies
 from numpy import array,dot,random,exp
 import numpy as np
-
 # defining class
-
 class NeuralNetwork():
 	"""docstring for NeuralNetwork"""
 	def __init__(self):
-
 		# seting seed so it can generate same random no. on every go
 		random.seed(1)
-
 		# defining synaptic weights randomly
-
 		self.syn0 = 2*random.random((3,4))-1
 		self.syn1 = 2*random.random((4,3))-1
 	# defining sigmoid function
 	def sigmoid(self,x,deriv = False):
 		if deriv == True:
 			return x*(1-x)
-	
 		return 1/(1+exp(-x))
 	# defining train function 
 	def train(self,trainingInputs,trainingOutputs,iterations):
